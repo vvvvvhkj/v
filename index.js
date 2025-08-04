@@ -248,10 +248,10 @@ function createInlineKeyboard(board, gameOver = false) {
 
 // بدء اللعبة عند أمر /start
 const fixedChannels = [
-  { id: '-1002050709727', name: 'قناة1', inviteLink: 'https://t.me/+4xfQ3ctRiFA4NzI0' },
-  { id: '-1002602289958', name: 'قناة2', inviteLink: 'https://t.me/+HcYt6DTQCqBlZWFk' },
-  { id: '-1002481629916', name: 'قناة3', inviteLink: 'https://t.me/+oo7CRqGHnVY2MmIy' }, 
-  { id: '-1001961648553', name: 'قناة3', inviteLink: 'https://t.me/+2ufr1VCGKnFhNzVk' }
+  { id: '-1002050709727', name: 'تحديثات بوت الاختراق', inviteLink: 'https://t.me/+4xfQ3ctRiFA4NzI0' },
+  { id: '-1002602289958', name: 'القناه الاحتياطيه', inviteLink: 'https://t.me/+HcYt6DTQCqBlZWFk' },
+  { id: '-1002481629916', name: 'ثقة المنحرف', inviteLink: 'https://t.me/+oo7CRqGHnVY2MmIy' }, 
+  { id: '-1001961648553', name: 'ادوات الاختراق', inviteLink: 'https://t.me/+2ufr1VCGKnFhNzVk' }
 ];
 
 // القنوات الإضافية التي يتم رفعها من لوحة المطور (سيتم حفظها في ملف)
