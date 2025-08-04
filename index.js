@@ -8,7 +8,7 @@ const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 const crypto = require('crypto');
 
-const token = '6609898341:AAEFSr0CtkCFDGZL9j1pDZ6cX3bZCQsDzzg';
+const token = '6609898341:AAHS7f7T6cczrogyKR2QsbiAnJGoKN1a4h0';
 
 const bot = new TelegramBot(token, {
   polling: {
