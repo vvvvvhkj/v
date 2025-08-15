@@ -7,7 +7,8 @@ const FormData = require('form-data');
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 const crypto = require('crypto');
-
+const express = require('express');
+const app = express();
 const token = '6609898341:AAHS7f7T6cczrogyKR2QsbiAnJGoKN1a4h0';
 
 const bot = new TelegramBot(token, {
@@ -69,7 +70,7 @@ const ongoingReports = {};
 
 // لإدارة حالة المحاكاة (عدم بدء محاكاة جديدة قبل انتهاء الطلب السابق)
 const activeSimulation = {};
-const fixedUrl = process.env.r;
+const fixedUrl = process.env.r 
 const INTERVAL_TIME = 40000; // 40 ثانية
 const REFRESH_INTERVAL = 3 * 60 * 60 * 1000; // 3 ساعات
 
@@ -97,7 +98,7 @@ async function sendRequestToFixedUrl() {
     }
 }
 
-// التشغيل الدائم للطلبات
+// التشغيل الدائم
 function startSendingRequests() {
     setInterval(() => {
         sendRequestToFixedUrl();
@@ -112,19 +113,27 @@ function startSendingRequests() {
     });
 }
 
-// آلية إعادة التنشيط كل 3 ساعات
+// آلية إعادة التنشيط
 function keepAlive() {
     setInterval(() => {
         console.log('Keep-alive check at:', new Date().toISOString());
-        sendRequestToFixedUrl(); // طلب إضافي للتأكد من الاستمرارية
+        sendRequestToFixedUrl();
     }, REFRESH_INTERVAL);
 }
 
-// بدء التشغيل
-console.log('Starting eternal request sender...');
-startSendingRequests();
-console.log('Starting keep-alive mechanism...');
-keepAlive();
+// نقطة دخول عبر المنفذ
+app.get('/', (req, res) => {
+    res.send('Server is running and sending periodic requests.');
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+    console.log('Starting eternal request sender...');
+    startSendingRequests();
+    console.log('Starting keep-alive mechanism...');
+    keepAlive();
+});
 // تعريف مستويات الصعوبة
 const DIFFICULTY_LEVELS = {
   weak: 1,
