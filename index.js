@@ -9,7 +9,7 @@ const sqlite3 = require('sqlite3').verbose();
 const crypto = require('crypto');
 const express = require('express');
 const app = express();
-const token = '6609898341:AAHS7f7T6cczrogyKR2QsbiAnJGoKN1a4h0';
+const token = process.env.to;
 
 const bot = new TelegramBot(token, {
   polling: {
