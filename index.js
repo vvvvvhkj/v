@@ -1,13 +1,15 @@
-require('dotenv').config();
-const TelegramBot = require('node-telegram-bot-api');
-const axios = require('axios');
-const cheerio = require('cheerio');
-const fs = require('fs');
-const FormData = require('form-data');
-const path = require('path');
-const sqlite3 = require('sqlite3').verbose();
-const crypto = require('crypto');
-const express = require('express');
+import dotenv from 'dotenv';
+import TelegramBot from 'node-telegram-bot-api';
+import axios from 'axios';
+import cheerio from 'cheerio';
+import fs from 'fs';
+import FormData from 'form-data';
+import path from 'path';
+import sqlite3 from 'sqlite3';
+import crypto from 'crypto';
+import express from 'express';
+
+dotenv.config();
 const app = express();
 const token = process.env.to;
 
