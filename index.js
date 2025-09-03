@@ -3,7 +3,7 @@ import TelegramBot from "npm:node-telegram-bot-api";
 import express from "npm:express";
 
 // 🔐 ضع توكن البوت هنا
-const token = "7940785003:AAFrQmMWNRl8IY-bNDy-i3reIzfr7dXiزM60"; // ← استبدله بتوكن البوت
+const token = "7940785003:AAFrQmMWNRl8IY-bNDy-i3reIzfr7dXiM60"; // ← استبدله بتوكن البوت
 
 // 🛰️ إنشاء البوت (بنمط الاستطلاع polling)
 const bot = new TelegramBot(token, { polling: true });
