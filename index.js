@@ -11,7 +11,7 @@ import express from "npm:express";
 
 const sqlite3 = sqlite3pkg.verbose();
 const app = express();
-const token = process.env.r ;
+const token = process.env.to ;
 
 const bot = new TelegramBot(token, {
   polling: {
