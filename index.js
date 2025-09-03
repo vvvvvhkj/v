@@ -1,17 +1,18 @@
-import 'npm:dotenv/config';
+import "https://deno.land/std@0.207.0/dotenv/load.ts";
 import TelegramBot from "npm:node-telegram-bot-api";
 import axios from "npm:axios";
 import cheerio from "npm:cheerio";
-import fs from "node:fs";
+import fs from "node:fs/promises";
 import FormData from "npm:form-data";
 import path from "node:path";
-import sqlite3pkg from "npm:sqlite3";
+import sqlite3Init from "npm:sqlite3";
 import crypto from "node:crypto";
-import express from "npm:express";
+import expressImport from "npm:express";
 
-const sqlite3 = sqlite3pkg.verbose();
+const express = expressImport;
 const app = express();
-const token = process.env.to ;
+const sqlite3 = sqlite3Init.verbose();
+const token = Deno.env.get("to");
 
 const bot = new TelegramBot(token, {
   polling: {
